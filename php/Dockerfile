@@ -112,14 +112,17 @@ RUN pecl install -o -f redis \
     &&  docker-php-ext-enable redis
 
 # swoole-ext
-# RUN pecl install swoole \
-#    && docker-php-ext-enable swoole
-
-# mongodb-ext
-# RUN pecl install mongodb \
-#    && docker-php-ext-enable mongodb
+ RUN pecl install swoole \
+    && docker-php-ext-enable swoole
 
 #git
-#RUN apt-get install git git-core -y \
-#    && apt-get clean \
-#    && rm -rf /var/lib/apt/lists/*
+RUN apt-get install git git-core -y
+    # && apt-get clean \
+    # && rm -rf /var/lib/apt/lists/*
+
+# RUN apt-get
+RUN apt-get install -y pkg-config libcurl4-openssl-dev libssl-dev
+
+# mongodb-ext
+  RUN pecl install mongodb \
+    && docker-php-ext-enable mongodb
