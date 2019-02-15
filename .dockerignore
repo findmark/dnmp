@@ -1,0 +1,9 @@
+.idea
+.DS_Store
+log/mongo
+log/mysql
+log/nginx
+log/redis
+log/swoole
+log/www
+www/
